@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "node server | python vangogh_push.py -j ./public/dev/index.json -t ./public/dev/index.xml",
+    "build": "gulp rename --env development"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "gulp": "^4.0.0"
+  },
+  "devDependencies": {
+    "gulp-rename": "^1.4.0",
+    "minimist": "^1.2.0"
+  }
+}
