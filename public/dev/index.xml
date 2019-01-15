@@ -74,19 +74,32 @@
                     "margin-top":16,
                     "font-family": "PingFangSC-Regular"
                 },
-                "adBtn": {
-                    "width": 280,
+                "adBtnWrap": {
+                    "width": "100%",
                     "height": 44,
                     "margin-top": 60,
+                    "padding-left": 40,
+                    "padding-right": 40
+                },
+                "adBtn": {
+                    "width": "100%",
+                    "height": "100%",
                     "border-radius": 4,
                     "font-size": 16,
                     "color": "#ffffff",
-                    "font-family": "PingFangSC-Regular"
+                    "font-family": "PingFangSC-Regular",
+                    "highlighted-text-color": "#1A000000"
                 },
-                "iosBtn": {
-                    "width": 295,
+                "iosBtnWrap": {
+                    "width": "100%",
                     "height": 44,
                     "margin-top": 60,
+                    "padding-left": 40,
+                    "padding-right": 40
+                },
+                "iosBtn": {
+                    "width": "100%",
+                    "height": "100%",
                     "justify-content": "center",
                     "border-radius": 4,
                     "background-color": "#F85959",
@@ -102,10 +115,16 @@
                     "width": 15,
                     "height": 20
                 },
-                "againBtn": {
-                    "margin-top": 16,
-                    "width": 295,
+                "againBtnWrap": {
+                    "width": "100%",
                     "height": 44,
+                    "margin-top": 16,
+                    "padding-left": 40,
+                    "padding-right": 40
+                },
+                "againBtn": {
+                    "width": "100%",
+                    "height": "100%",
                     "justify-content": "center",
                     "border-width": 1,
                     "border-color": "#464646",
@@ -136,17 +155,23 @@
                             <Text class="vName" style='{"text":"{{dName}}"}'/>
                             <Text class="vDes" style='{"text":"{{dDes}}"}'/>
                             {{^__Global__.iOS}}
-                                <DownloadButton class="adBtn" style='{"text": "点击下载", "color":"#ffffff", "idle-color": "#F85959", "idle-text-color": "#000000", "reached-color": "#F85959", "unreached-color": "#1D1D1D", "download-text-color": "#000000"}'/>
+                            <View class="adBtnWrap">
+                                <DownloadButton class="adBtn" style='{"text": "点击下载", "idle-color": "#F85959", "font-size": 16, "idle-text-color": "#ffffff", "reached-color": "#F85959", "unreached-color": "#1D1D1D", "download-text-color": "#ffffff", "download-status-text": {"withProgress": true}}'/>
+                            </View>
                             {{/__Global__.iOS}}
                             {{#__Global__.iOS}}
+                            <View class="iosBtnWrap">
                                 <View class="iosBtn flex-row">
                                     <Image class="iosdIcon" style='{"image-url":"{{isodIcon}}"}'/>
                                     <Text class="iosBtnText" style='{"text": "{{dBtnText}}"}'/>
                                 </View>
+                            </View>
                             {{/__Global__.iOS}}
-                            <View class="againBtn flex-row" onclick='{"event":"replay"}'>
-                                <Image class="againIcon" style='{"image-url":"{{againIcon}}"}'/>
-                                <Text class="againText" style='{"text":"{{replayBtnText}}"}'/>
+                            <View class="againBtnWrap">
+                                <View class="againBtn flex-row" onclick='{"event":"replay"}'>
+                                    <Image class="againIcon" style='{"image-url":"{{againIcon}}"}'/>
+                                    <Text class="againText" style='{"text":"{{replayBtnText}}"}'/>
+                                </View>
                             </View>
                         </View>
                         <View class="noneDown"/>
