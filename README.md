@@ -17,7 +17,10 @@
 - 在dev下新建项目，index.xml和index.json（目前需要使用index命名，因为IOS模拟器会自动请求index.xml和index.json）
 - 组件和样式开发时，可参考doc文档的注意事项 https://docs.bytedance.net/doc/4d4tB2Tvn09CZsdE9zkDBh
 - 事件和json字段需要和端上同学协商
-- pathName=项目名（dev下文件夹名）npm run dev 模拟器自测(启动本地服务forIOS,执行phython命令forAndrion)
+- pathName=[dev下文件夹名] npm run dev 模拟器自测(启动本地服务forIOS,执行phython命令forAndrion)
+### 打包
+- npm run build -- --pathName [文件名] 会把dev下该文件夹下的index.xml文件hash名化，目前并没有其他功能
+
 ### 上线（待补充）
 
 
