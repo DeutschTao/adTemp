@@ -20,6 +20,7 @@
                 },
                 "content": {
                     "width": "100%",
+                    "height": "100%",
                     "justify-content": "flex-start"
                 },
                 "header": {
@@ -150,7 +151,7 @@
                             <Text class="vDes" style='{"text":"{{dDes}}"}'/>
                             {{^__Global__.iOS}}
                             <View class="adBtnWrap btnWrap">
-                                <DownloadButton class="adBtn" style='{"text":"点击下载", "idle-color": "#F85959", "font-size": 16, "idle-text-color": "#ffffff", "reached-color": "#F85959", "unreached-color": "#1D1D1D", "download-text-color": "#ffffff", "download-status-text": {"withProgress": true, "idle":"点击下载", "start": "点击下载", "active": "下载中", "paused":"继续下载", "failed": "", "installed": "", "finished": ""}}'/>
+                                <DownloadButton class="adBtn" style='{"text":"点击下载", "idle-color": "#F85959", "font-size": 16, "idle-text-color": "#ffffff", "reached-color": "#F85959", "unreached-color": "#1D1D1D", "download-text-color": "#ffffff", "download-status-text": {"withProgress": true, "idle":"点击下载", "start": "点击下载", "active": "下载中", "paused":"继续下载", "failed": "重新下载", "installed": "立即打开", "finished": "立即安装"}}'/>
                             </View>
                             {{/__Global__.iOS}}
                             {{#__Global__.iOS}}
