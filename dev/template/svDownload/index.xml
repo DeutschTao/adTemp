@@ -20,7 +20,6 @@
                 },
                 "content": {
                     "width": "100%",
-                    "height": "100%",
                     "justify-content": "flex-start"
                 },
                 "header": {
@@ -49,7 +48,6 @@
                     "flex-shrink": 2
                 },
                 "infoMiddle": {
-                    "width": "100%",
                     "justify-content": "flex-start",
                     "flex-grow": 0,
                     "flex-shrink": 1
@@ -62,7 +60,7 @@
                 "mainIcon": {
                     "width": 72,
                     "height": 72,
-                    "border-radius": 36
+                    "border-radius": 17
                 },
                 "vName": {
                     "font-size": 19,
@@ -82,24 +80,36 @@
                     "padding-left": 40,
                     "padding-right": 40
                 },
-                "desBtnWrap": {
+                "adBtnWrap": {
                     "margin-top": 60
                 },
-                "desBtn": {
+                "adBtn": {
+                    "width": "100%",
+                    "height": "100%",
+                    "border-radius": 4,
+                    "font-size": 16,
+                    "color": "#ffffff",
+                    "font-family": "PingFangSC-Regular",
+                    "highlighted-text-color": "#1A000000"
+                },
+                "iosBtnWrap": {
+                    "margin-top": 60
+                },
+                "iosBtn": {
                     "width": "100%",
                     "height": "100%",
                     "justify-content": "center",
                     "border-radius": 4,
                     "background-color": "#F85959",
-                    "highlighted-background-color": "#19000000"
+                    "highlighted-background-color": "#1A000000"
                 },
-                "desText": {
+                "iosBtnText": {
                     "font-size": 16,
                     "color": "#ffffff",
-                    "margin-left": 6,
+                    "margin-left": 4,
                     "font-family": "PingFangSC-Regular"
                 },
-                "desIcon": {
+                "iosdIcon": {
                     "width": 15,
                     "height": 20
                 },
@@ -121,7 +131,7 @@
                 "againText": {
                     "font-size": 16,
                     "color": "#ffffff",
-                    "margin-left": 6,
+                    "margin-left": 4,
                     "font-family": "PingFangSC-Regular"
                 }
             }
@@ -138,12 +148,19 @@
                             <Image class="mainIcon" style='{"image-url":"{{mainIcon}}"}'/>
                             <Text class="vName" style='{"text":"{{dName}}"}'/>
                             <Text class="vDes" style='{"text":"{{dDes}}"}'/>
-                            <View class="desBtnWrap btnWrap">
-                                <View class="desBtn flex-row" onclick='{"event":"catDes"}'>
-                                    <Image class="desIcon" style='{"image-url":"{{desIcon}}"}'/>
-                                    <Text class="desText" style='{"text": "{{dBtnText}}"}'/>
+                            {{^__Global__.iOS}}
+                            <View class="adBtnWrap btnWrap">
+                                <DownloadButton class="adBtn" style='{"text":"点击下载", "idle-color": "#F85959", "font-size": 16, "idle-text-color": "#ffffff", "reached-color": "#F85959", "unreached-color": "#1D1D1D", "download-text-color": "#ffffff", "download-status-text": {"withProgress": true, "idle":"点击下载", "start": "点击下载", "active": "下载中", "paused":"继续下载", "failed": "重新下载", "installed": "立即打开", "finished": "立即安装"}}'/>
+                            </View>
+                            {{/__Global__.iOS}}
+                            {{#__Global__.iOS}}
+                            <View class="iosBtnWrap btnWrap">
+                                <View class="iosBtn flex-row" onclick='{"event":"iosDownload"}'>
+                                    <Image class="iosdIcon" style='{"image-url":"{{isodIcon}}"}'/>
+                                    <Text class="iosBtnText" style='{"text": "{{dBtnText}}"}'/>
                                 </View>
                             </View>
+                            {{/__Global__.iOS}}
                             <View class="againBtnWrap btnWrap">
                                 <View class="againBtn flex-row" onclick='{"event":"replay"}'>
                                     <Image class="againIcon" style='{"image-url":"{{againIcon}}"}'/>

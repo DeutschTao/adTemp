@@ -1,20 +1,23 @@
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
     minimist = require('minimist'),
-    runSequence = require('run-sequence'),
+    runSequence = require('run-sequence'), // gulp版本需要小于4.0，否则run-sequence运行报错
     rev = require('gulp-rev'),
     clean = require('gulp-clean'),
-    revCollector = require('gulp-rev-collector');
+    revCollector = require('gulp-rev-collector'),
+    fs = require('fs');
 
 var options = require('minimist')(process.argv.slice(2));
 
 
-var xmlSrc = './dev/'+ options.pathName + '/*.xml';
+var xmlSrc = './dev/template/'+ options.pathName + '/*.xml';
 
-// gulp.task('clean', function(){
-//     return gulp.src('./dist/' + options.newname, {read: false})
-//         .pipe(clean());
-// })
+gulp.task('clean', function(){
+    if (fs.existsSync('./dist/' + options.pathName)) {
+        return gulp.src('./dist/' + options.pathName, {read: false})
+        .pipe(clean());
+    }
+})
 gulp.task('revXml', function(){
     return gulp.src(xmlSrc)
         .pipe(rev())
@@ -40,8 +43,12 @@ gulp.task('revXml', function(){
 //     );  
 // });
 
-// gulp.task('default', ['dev']);
-// gulp.task('runsequence', function (callback) {
-//     runSequence('clean', 'revXml', callback)
-// })
+gulp.task('build', function(cb) {
+    runSequence(
+        'clean', 
+        'revXml', 
+        cb
+    );
+});
+
 

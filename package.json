@@ -1,13 +1,13 @@
 {
   "scripts": {
-    "dev": "node server $pathName | python vangogh_push.py -j ./dev/$pathName/index.json -t ./dev/$pathName/index.xml",
-    "build": "gulp revXml --env development"
+    "dev": "node server $pathName | python vangogh_push.py -j ./dev/template/$pathName/index.json -t ./dev/template/$pathName/index.xml",
+    "build": "gulp build --env development"
   },
   "dependencies": {
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
     "gulp-rename": "^1.4.0",
     "gulp-rev": "^9.0.0",
