@@ -9,16 +9,15 @@ var gulp = require('gulp'),
 
 var options = require('minimist')(process.argv.slice(2));
 
-
 var xmlSrc = './dev/template/'+ options.pathName + '/*.xml';
 
-gulp.task('clean', function(){
+gulp.task('clean', function(){ // 先删除已存在的文件
     if (fs.existsSync('./dist/' + options.pathName)) {
         return gulp.src('./dist/' + options.pathName, {read: false})
         .pipe(clean());
     }
 })
-gulp.task('revXml', function(){
+gulp.task('revXml', function(){ // 将xml文件名hash化
     return gulp.src(xmlSrc)
         .pipe(rev())
         .pipe(gulp.dest('./dist/'+ options.pathName))
@@ -34,14 +33,6 @@ gulp.task('revXml', function(){
 //         .pipe(gulp.dest("./dist/" + options.newname));
 // });
 
-// gulp.task('dev', function (done) {  
-//     condition = false;  
-//     runSequence(  
-//         ['clean'],  
-//         ['revXml'],   
-//         done  
-//     );  
-// });
 
 gulp.task('build', function(cb) {
     runSequence(
