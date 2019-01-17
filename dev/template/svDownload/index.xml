@@ -140,7 +140,7 @@
             <View class="wrap">
                 <View class="content flex-column">
                     <View class="header flex-row">
-                        <Image class="quitIcon" onclick='{"event":"quit"}' style='{"image-url": "{{quitIcon}}"}'/>
+                        <Image class="quitIcon" onclick='{"event":"close"}' style='{"image-url": "{{quitIcon}}"}'/>
                     </View>
                     <View class="infoWrap">
                         <View class="noneUp"/>
