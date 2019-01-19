@@ -1,4 +1,4 @@
-<VanGogh compatible-sdk="1.0.0">
+<VanGogh compatible-sdk="1.0.0" >
     <BizInfo biz="bytedance.toutiao.shortvideo" template-engine="mustache" template-create="UTC 2019/01/14 13:10:00"/>
         <Style type="text/css" theme="default">
             {
