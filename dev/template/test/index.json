@@ -1,0 +1,39 @@
+{
+    "author":{
+        "avatar":{
+
+        },
+        "name":"绍林开发"
+    },
+    "button_list":{
+        "form":{
+            "text":"立即预约",
+            "type":1 
+        }
+    },
+    "image_list":[
+        {
+            "height":720,
+            "uri":"large/web.business.image/201811095d0d48cbd763f9534b9fa3bf",
+            "url":"http://sf3-ttcdn-tos.pstatp.com/img/web.business.image/201811095d0d48cbd763f9534b9fa3bf~960x0.webp",
+            "url_list":[
+                {
+                    "url":"http://sf3-ttcdn-tos.pstatp.com/img/web.business.image/201811095d0d48cbd763f9534b9fa3bf~960x0.webp"
+                },
+                {
+                    "url":"http://sf6-ttcdn-tos.pstatp.com/img/web.business.image/201811095d0d48cbd763f9534b9fa3bf~960x0.webp"
+                },
+                {
+                    "url":"http://sf1-ttcdn-tos.pstatp.com/img/web.business.image/201811095d0d48cbd763f9534b9fa3bf~960x0.webp"
+                }
+            ],
+            "width":1280
+        }
+    ],
+    "label":"广告",
+    "send_time":1539234173,
+    "source":"绍林开发",
+    "sub_title":"预约上门演示",
+    "title":"双500强企业都是如何管理知识文档的?国内企业如何参考？"
+}
+

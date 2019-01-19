@@ -8,6 +8,7 @@ fs.readFile('./dev/template/' + process.env.pathName + '/index.xml','utf-8',func
             return;
         }
         console.log('ok');
-        // console.log(JSON.parse(response.VanGogh.Style.text()))
+        console.log(response.VanGogh)
+        // console.log(response.VanGogh.Style.text())
     });
  });
