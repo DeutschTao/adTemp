@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VanGogh compatible-sdk="0.4.0">
+    <BizInfo biz="bytedance.toutiao.feed" template-engine="mustache" template-create="UTC 2018/11/30 18:29:00"/>
+    {{^__Global__.iOS}}
+    <Style type="text/css" theme="default">
+        {
+            "cell": {
+                "width" : "100%",
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "align-items": "center",
+                "padding-top" :15,
+                "padding-bottom" :15,
+                "padding-left" :15,
+                "padding-right" :15
+            },
+            "content": {
+                "width" : "100%",
+                "display": "flex",
+                "flex-direction": "row",
+                "justify-content": "center",
+                "align-items": "center"
+            },
+            "content-left" : {
+                "flex-shrink":2,
+                "width" : "67%",
+                "display":"flex",
+                "flex-direction":"column",
+                "justify-content":"flex-start",
+                "align-items":"stretch",
+                "margin-right":8
+            },
+            "right-image" : {
+                "height" : 70,
+                "width" : "33%",
+                "padding_left":8,
+                "display":"flex",
+                "flex-direction":"row",
+                "justify-content":"center",
+                "aspect-ratio": 1.53,
+                "content-mode": "scale-aspect-fill"
+            },
+            "title": {
+                "text-align":"left",
+                "display": "flex",
+                "flex-direction": "row",
+                "justify-content": "flex-start",
+                "align-items": "stretch",
+                "position-type": "relative",
+                "font-size": 17,
+                "max-lines": 3
+            },
+            "info": {
+                "height": 30,
+                "display": "flex",
+                "flex-direction": "row",
+                "flex-shrink": 2,
+                "justify-content":"flex-start",
+                "align-items": "center",
+                "align-self": "flex-start",
+                "position-type": "relative",
+                "clip-views": 1
+            },
+            "label": {
+                "text-align" : "center",
+                "padding-left" : 2,
+                "padding-right": 2,
+                "height": 14,
+                "font-size": 10,
+                "border-radius" : 2,
+                "border-width" : 0.5
+            },
+            "source": {
+                "flex-grow":2,
+                "display": "flex",
+                "flex-direction": "row",
+                "justify-content": "flex-start",
+                "align-items": "center",
+                "position-type": "relative",
+                "font-size": 12,
+                "margin-left" : 5
+            },
+            "lbs-icon": {
+                "image-name": "lbs_ad_feed",
+                "width": 9,
+                "height": 10,
+                "margin-left" : 5
+            },
+            "lbs-distance": {
+                "font-size": 12,
+                "margin-left" : 5
+            },
+            "lbs-text": {
+                "font-size": 12
+            },
+            "sendtime": {
+                "flex-grow":2,
+                "display": "flex",
+                "align-items": "stretch",
+                "position-type": "relative",
+                "font-size": 12,
+                "margin-left" : 5
+            },
+            "dislike": {
+                "padding-left": 2,
+                "padding-right": 2,
+                "justify-content":"center",
+                "align-items":"center",
+                "position-type": "relative",
+                "height": 30,
+                "flex-shrink": 1,
+                "align-self": "flex-end",
+                "display": "flex",
+                "margin-left" : 5
+            },
+            "creative": {
+                "width":"100%",
+                "height": "auto",
+                "flex-direction": "row",
+                "justify-content":"space-between",
+                "align-items": "center",
+                "margin-top": 8
+            },
+            "sub-title": {
+                "margin-left": 8
+            },
+            "creative-ad-info": {
+                "background-color": "#00FFFFFF",
+                "min-width": 72,
+                "flex-direction": "row",
+                "align-items": "center",
+                "min-height": 28,
+                "padding-top": 9,
+                "padding-bottom": 9,
+                "padding-left": 12,
+                "padding-right": 12
+            },
+            "creative-ad-info-block": {
+                "height": 19,
+                "width": 1,
+                "margin-right": 15
+            },
+            "creative-ad-info-image": {
+                "height": "30",
+                "margin-right": 5
+            },
+            "creative-ad-info-text": {
+                "font-size": 15
+            },
+            "divider": {
+                "width": "100%",
+                "height": 0.5,
+                "margin-top": "12"
+            }
+        }
+    </Style>
+    <Style theme="day">
+        {
+            "ssxinzi1": {
+                "color": "#222222"
+            },
+            "ssxinmian4": {
+                "background-color": "#ffffff"
+            },
+            "ssxinzi6": {
+                "color": "#2a90d7"
+            },
+            "ssxinmian1": {
+                "background-color": "#f4f5f6"
+            },
+            "ssxinzi3": {
+                "color": "#999999"
+            },
+            "ssxinxian1": {
+                "background-color": "#e8e8e8"
+            },
+            "label-border": {
+                "border-width": 0.5,
+                "border-radius" : 2,
+                "border-color": "#2a90d7"
+            }
+        }
+    </Style>
+    <Style theme="night">
+        {
+            "ssxinzi1": {
+                "color": "#707070"
+            },
+            "ssxinmian4": {
+                "background-color": "#252525"
+            },
+            "ssxinzi6": {
+                "color": "#67778b"
+            },
+            "ssxinmian1": {
+                "background-color": "#1b1b1b"
+            },
+            "ssxinzi3": {
+                "color": "#707070"
+            },
+            "ssxinxian1": {
+                "background-color": "#464646"
+            },
+            "label-border": {
+                "border-width": 0.5,
+                "border-radius" : 2,
+                "border-color": "#67778b"
+            }
+        }
+    </Style>
+    <Page>
+        <View class='cell ssxinmian4' > 
+            <View class="content">
+                <View class="content-left">
+                    <Text class="title ssxinzi1" text='{{title}}'></Text>
+                    <View display='flex' flex-direction="row">
+                      <View class='info' >
+                        <Text class="label ssxinzi6 label-border" text='{{label}}' ></Text>
+                        {{^location}}
+                        <Text class="source ssxinzi3" text='{{source}}' ></Text>
+                        {{#send_time}}
+                        <Text class="sendtime ssxinzi3" text='{{send_time}}' transfer='data-recent' ></Text>
+                        {{/send_time}}
+                        {{/location}}
+                        {{#location}}
+                            <Image class="lbs-icon"></Image>
+                            {{#distance}}
+                            <Text class="lbs-distance ssxinzi3" text='{{distance}} ' onclick='{"event":"lbs"}'></Text>
+                            {{/distance}}
+                            {{#district}}
+                            <Text class="lbs-text ssxinzi3" text='{{district}}' onclick='{"event":"lbs"}'></Text>
+                            {{/district}}
+                            {{#street}}
+                            <Text class="lbs-text ssxinzi3" text='{{street}}' onclick='{"event":"lbs"}'></Text>
+                            {{/street}}
+                            {{#source}}
+                            <Text class="lbs-text ssxinzi3" text='{{source}}' onclick='{"event":"lbs"}'></Text>
+                            {{/source}}
+                        {{/location}}
+                      </View>
+                      <Button id="dislike" onclick='{"event":"dislike"}' class="dislike">
+                        <Image style='{"width":17,"height":12}' image-name='add_textpage_normal' ></Image>
+                      </Button>
+                  </View>
+                </View>
+                <Image id="image" class="right-image" image-info='{{image_list}}'></Image>
+            </View>
+            {{#button_list}}
+                {{#app}}
+                <View class="creative ssxinmian1">
+                  <Text class="sub-title ssxinzi3" text='{{sub_title}}' download-status-text='{"idle": "{{sub_title}}", "active": "已下载", "paused": "已下载", "withProgress": 1}'></Text>
+                  <View class="creative-ad-info" >
+                      <Block class="creative-ad-info-block"></Block>
+                      <Image class="creative-ad-info-image" image-name='ad_app_icon_bg'></Image>
+                      <Text class="creative-ad-info-text ssxinzi6" text='{{text}}' onclick='{"event":"download_app"}' download-status-text='{"idle": "{{text}}", "active": "暂停下载", "paused": "继续下载", "failed": "重新下载", "installed": "立即打开", "finished":"立即安装", "withProgress": 0}'></Text>
+                  </View>
+                </View>
+                {{/app}}
+                {{#form}}
+                <View class="creative ssxinmian1">
+                  <Text  class="sub-title ssxinzi3"text='{{sub_title}}'></Text>
+                  <View class="creative-ad-info">
+                      <Block class="creative-ad-info-block"></Block>
+                      <Text class="creative-ad-info-text ssxinzi6" text='{{text}}' onclick='{"event":"open_form"}'></Text>
+                  </View>
+                </View>
+                {{/form}}
+                {{#coupon}}
+                <View class="creative ssxinmian1">
+                  <Text  class="sub-title ssxinzi3"text='{{sub_title}}'></Text>
+                  <View class="creative-ad-info">
+                      <Block class="creative-ad-info-block"></Block>
+                      <Text class="creative-ad-info-text ssxinzi6" text='{{text}}' onclick='{"event":"open_coupon"}'></Text>
+                  </View>
+                </View>
+                {{/coupon}}
+                {{#counsel}}
+                <View class="creative ssxinmian1">
+                  <Text  class="sub-title ssxinzi3" text='{{sub_title}}'></Text>
+                  <View class="creative-ad-info">
+                      <Block class="creative-ad-info-block"></Block>
+                      <Image class="creative-ad-info-image" image-name='ad_counsel_icon_bg'></Image>
+                      <Text class="creative-ad-info-text ssxinzi6" text='{{text}}' onclick='{"event":"open_counsel"}'></Text>
+                  </View>
+                </View>
+                {{/counsel}}
+                {{#discount}}
+                <View class="creative ssxinmian1">
+                  <Text  class="sub-title ssxinzi3" text='{{sub_title}}'></Text>
+                  <View class="creative-ad-info">
+                      <Block class="creative-ad-info-block ssxinxian1"></Block>
+                      <Image class="creative-ad-info-image" image-name='ad_discount_icon_bg'></Image>
+                      <Text class="creative-ad-info-text ssxinzi6" text='{{text}}' onclick='{"event":"open_discount"}'></Text>
+                  </View>
+                </View>
+                {{/discount}}
+                {{#phone}}
+                <View class="creative ssxinmian1">
+                  <Text  class="sub-title ssxinzi3" text='{{sub_title}}'></Text>
+                  <View class="creative-ad-info">
+                      <Block class="creative-ad-info-block"></Block>
+                      <Image class="creative-ad-info-image" image-name='ad_phone_icon_bg'></Image>
+                      <Text class="creative-ad-info-text ssxinzi6" text='{{text}}' onclick='{"event":"call_phone"}'></Text>
+                  </View>
+                </View>
+                {{/phone}}
+            {{/button_list}}
+            <Block class='divider ssxinxian1' />
+        </View>
+    </Page>
+     {{/__Global__.iOS}}
+     {{#__Global__.iOS}}
+    <Style type="text/css" theme="default">
+    {
+    "cell": {
+        "width" : "100%",
+        "flex-direction": "column",
+        "justify-content": "center",
+        "align-items": "stretch",
+        "padding-top" :15,
+        "padding-bottom" :15,
+        "padding-left" :15,
+        "padding-right" :15
+    },
+    "content" : {
+        "flex-direction":"row",
+        "justify-content":"space-between",
+        "align-items":"center",
+        },
+    "left" : {
+        "width" : "67%",
+        "flex-direction":"column",
+        "justify-content":"center",
+        "align-items":"flex-start",
+        "flex":2,
+        "padding-right":8
+    },
+    "right" : {
+        "width" : "33%",
+        "aspect-ratio" : 1.53,
+        "content-mode" : "scale-aspect-fill",
+        "clips-to-bounds" : 1
+    },
+    "title": {
+        "text-align":"left",
+        "font-size": 17,
+        "max-lines": 3
+    },
+    "info": {
+        "height": 30,
+        "width":"100%",
+        "flex-direction": "row",
+        "justify-content": "space-between",
+        "align-items": "center",
+        "align-content": "center"
+    },
+    "label": {
+        "text-align" : "center",
+        "padding" : 2,
+        "height": 14,
+        "font-size": 10,
+        "border-radius" : 2,
+        "border-color" : "#74A8DE",
+        "border-width" : 0.5
+    },
+    "info-panel": {
+        "height": 30,
+        "max-width":"100%",
+        "align-items": "center",
+        "flex-direction": "row",
+        "justify-content":"flex-start",
+        "flex":2,
+        "margin-left":5,
+        "margin-right":5,
+    },
+    "dislike": {
+        "background-color": "clear",
+        "padding-left": 2,
+        "padding-right": 2,
+        "height": "100%",
+        "align-self": "flex-end",
+        "margin-left": 5
+    },
+    "source": {
+        "font-size": 12,
+        "margin-left" : 5
+    },
+    "location": {
+        "padding-left": 5,
+        "height": "100%",
+        "align-items": "center",
+        "flex-direction": "row",
+        "justify-content":"flex-start",
+        "background-color" : "clear"
+    },
+    "action-panel": {
+        "width":"100%",
+        "height": 43,
+        "flex-direction": "row",
+        "justify-content":"space-between",
+        "align-items": "center",
+        "margin-top":8,
+        "padding-left" : 8
+    },
+    "sub_title": {
+        "text-align":"left",
+        "font-size": 15
+    },
+    "action-button": {
+        "background-color" : "clear",
+        "flex-direction": "row",
+        "width" : "108",
+        "height": 43
+    }
+    }
+    </Style>
+    <Style type="text/css" theme="day">
+{
+    "Text1": {
+        "color": "#222222"
+    },
+    "Text3": {
+        "color": "#999999"
+    },
+    "Text6": {
+        "color": "#2a90d7"
+    },
+    "Background2": {
+        "background-color": "#e8e8e8"
+    },
+    "Background3": {
+        "background-color": "#f4f5f6"
+    },
+    "dislike-image": {
+        "width": 17,
+        "height": 12,
+        "image-name": "add_textpage"
+    },
+    "lbs_feed_image": {
+        "width": 9,
+        "height": 12,
+        "image-name": "lbs_ad_feed"
+    },
+    "app_feed_button": {
+        "width": "13",
+        "height": "13",
+        "image-name": "download_ad_feed"
+    },
+    "phone_feed_button": {
+        "width": "13",
+        "height": "13",
+        "image-name": "cellphone_ad_feed"
+    },
+    "counsel_feed_button": {
+        "width": "13",
+        "height": "13",
+        "image-name": "counsel_ad_feed"
+    }
+}
+    </Style>
+    <Style type="text/css" theme="night"> 
+    {
+    "Text1": {
+        "color": "#707070"
+    },
+    "Text3": {
+        "color": "#707070"
+    },
+    "Text6": {
+        "color": "#67778b"
+    },
+    "Background2": {
+        "background-color": "#1b1b1b"
+    },
+    "Background3": {
+        "background-color": "#1b1b1b"
+    },
+    "dislike-image" :{   
+        "width":17,
+        "height":12,
+        "image-name" : "add_textpage_night"
+    },
+    "lbs_feed_image" : {
+        "width":9, 
+        "height":12,
+        "image-name":"lbs_ad_feed_night"
+    },
+    "app_feed_button" : {
+        "width":"13",
+        "height":"13",
+        "image-name":"download_ad_feed_night"
+    },
+    "phone_feed_button": {
+        "width": "13",
+        "height": "13",
+        "image-name": "cellphone_ad_feed_nignt"
+    },
+    "counsel_feed_button": {
+        "width": "13",
+        "height": "13",
+        "image-name": "counsel_ad_feed_night"
+    }
+}
+    </Style>
+    <Page>
+        <View class='cell'>
+            <View class="content">
+                <View class="left">
+                    <Text id="title" class="title Text1">{{title}}</Text>
+                    <View class='info'>
+                        <Text class="label Text6" text='广告'>{{label}}</Text>
+                        {{^location}}
+                        <View  class="info-panel" clip-views="1">
+                            <Text class="source Text3" text='{{source}}' ></Text>
+                            <Text class="source Text3" transformer="data-recent" text='{{send_time}}'></Text>
+                         </View>
+                        {{/location}}
+                        {{#location}}
+                        <View class="info-panel" onclick='{"event":"open_location"}' clip-views="1">
+                                <Image margin-right="5" class="lbs_feed_image"></Image>
+                                <Text font-size="12" class="Text3">{{distance}} </Text>
+                            {{#district}}
+                                <Text font-size="12" class="Text3">{{district}}</Text>
+                            {{/district}}
+                            {{#street}}
+                                <Text font-size="12" class="Text3">{{street}}</Text>
+                            {{/street}}
+                            {{#source}}
+                                <Text font-size="12" class="Text3">{{source}}</Text>
+                            {{/source}}
+                        </View>
+                        {{/location}}
+                        <Button id="dislike" onclick='{"event":"dislike"}' class="dislike">
+                            <Image class="dislike-image"></Image>
+                        </Button>
+                    </View>
+                </View>
+                <Image id="image" data-theme="1" class="right Background3">
+                    {{#FIRSTITEM}}image_list{{/FIRSTITEM}}
+                </Image>
+            </View>
+            
+            {{#button_list}}
+            <View class="action-panel Background3">
+                <Text class="sub_title Text3">{{sub_title}}</Text>
+                {{#app}}
+                <Button class="action-button" onclick='{"event":"download_app"}'>
+                    <Block width="1" left="0" bottom="12" position="absolute" top="12" class="Background2"/>
+                    <Image class="app_feed_button"></Image>
+                    <Text class="Text6" margin-left="4" font-size="15" text="立即下载">{{text}}</Text>
+                </Button>
+                {{/app}}
+                {{#phone}}
+                <Button class="action-button" onclick='{"event":"call_phone"}'>
+                    <Block width="1" left="0" bottom="12" position="absolute" top="12" class="Background2"/>
+                    <Image class="phone_feed_button"></Image>
+                    <Text class="Text6" margin-left="4" font-size="15" text="电话拨打">{{text}}</Text>
+                </Button>
+                {{/phone}}
+                {{#counsel}}
+                <Button class="action-button" onclick='{"event":"open_counsel"}'>
+                    <Block width="1" left="0" bottom="12" position="absolute" top="12" class="Background2"/>
+                    <Image class="counsel_feed_button"></Image>
+                    <Text class="Text6" margin-left="4" font-size="15" text="在线咨询">{{text}}</Text>
+                </Button>
+                {{/counsel}}
+                {{#form}}
+                <Button class="action-button" onclick='{"event":"open_form"}'>
+                    <Block width="1" left="0" bottom="12" position="absolute" top="12" class="Background2"/>
+                    <Text class="Text6" font-size="15" text="立即预约">{{text}}</Text>
+                </Button>
+                {{/form}}
+                {{#web}}
+                <Button class="action-button" onclick='{"event":"open_detail"}'>
+                    <Block width="1" left="0" bottom="12" position="absolute" top="12" class="Background2"/>
+                    <Text class="Text6" font-size="15" text="查看详情">{{text}}</Text>
+                </Button>
+                {{/web}}
+            </View>
+            {{/button_list}}
+        </View>
+    </Page>
+
+     {{/__Global__.iOS}}
+
+</VanGogh>

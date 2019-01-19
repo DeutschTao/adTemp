@@ -12,3 +12,5 @@ fs.readFile('./dev/template/' + process.env.pathName + '/index.xml','utf-8',func
         // console.log(response.VanGogh.Style.text())
     });
  });
+
+
